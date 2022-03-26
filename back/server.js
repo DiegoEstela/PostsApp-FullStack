@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import postRoutes from "./routes/posts.routes.js";
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8081;
 
 const app = express();
 

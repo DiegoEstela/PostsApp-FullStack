@@ -10,6 +10,10 @@ const CreatePost = () => {
   const navigate = useNavigate();
 
   const send = async (e) => {
+    if (title === "" || content === "") {
+      alert("Todos los campos son obligatorios");
+      return;
+    }
     e.preventDefault();
     await axios.post(URL, { title, content });
     navigate("/");

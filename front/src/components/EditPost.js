@@ -18,10 +18,10 @@ const EditPost = () => {
   };
 
   useEffect(() => {
-    getBlogById();
+    getPostById();
   }, []);
 
-  const getBlogById = async () => {
+  const getPostById = async () => {
     const res = await axios.get(URL + id);
     setTitle(res.data.title);
     setContent(res.data.content);
@@ -48,7 +48,7 @@ const EditPost = () => {
           />
         </div>
         <Button type="submit" className="btn btn-primary">
-          Modify
+          Edit
         </Button>
       </Form>
     </>

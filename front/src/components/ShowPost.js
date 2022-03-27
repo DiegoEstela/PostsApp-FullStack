@@ -40,15 +40,18 @@ const ShowPost = () => {
             </thead>
             <tbody>
               {posts.map((blog) => (
-                <tr key={blog._id}>
+                <tr key={blog.id}>
                   <td>{blog.title}</td>
                   <td>{blog.content}</td>
                   <td>
-                    <Link to={`/edit/${blog._id}`} className="btn btn-info">
+                    <Link to={`/edit/${blog.id}`} className="btn btn-info">
                       <AiFillEdit />
                     </Link>
+                    <Link to={`/show/${blog.id}`} className="btn btn-info">
+                      ver
+                    </Link>
                     <Button
-                      onClick={() => deletePost(blog._id)}
+                      onClick={() => deletePost(blog.id)}
                       className="btn btn-danger"
                     >
                       <AiFillDelete />

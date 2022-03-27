@@ -1,4 +1,4 @@
-import express, { application } from "express";
+import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import db from "./database/db.js";
@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import postRoutes from "./routes/posts.routes.js";
 
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT;
 
 const app = express();
 

@@ -3,11 +3,9 @@ import PostModel from "../models/posts.model.js";
 export const getAllPosts = async (req, res) => {
   try {
     const posts = await PostModel.findAll();
-    res.json(posts);
+    res.status(200).json(posts);
   } catch (error) {
-    res.json({
-      error: error.message,
-    });
+    res.status(500).json(error);
   }
 };
 
@@ -18,11 +16,9 @@ export const getPost = async (req, res) => {
         id: req.params.id,
       },
     });
-    res.json(post);
+    res.status(200).json(post);
   } catch (error) {
-    res.json({
-      error: error.message,
-    });
+    res.status(500).json(error);
   }
 };
 
